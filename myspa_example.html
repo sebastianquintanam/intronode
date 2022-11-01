@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Ejemplo SPA Basico</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+            .container_general {
+                text-align: center;
+                border: 2px solid red;
+            }
+            .container_main {
+                border: 2px solid blue;
+                margin-bottom: 5px;
+                padding: 5px;
+            }
+            #contenedor {
+                border: 2px solid orange;
+            }
+        </style>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <div class="container_general">
+            <div class="subcontainer">
+                <h2>SPA Ejemplo</h2>
+            </div>
+            <div class="container_main">
+                <h3>Contenido:</h3>
+                <div id="contenedor">Inicial</div>
+            </div>
+            <div>
+                <input
+                    type="button"
+                    value="Actualizar contenido"
+                    onclick="actualizarContenido()"
+                />
+            </div>
+        </div>
+        <script>
+            function actualizarContenido() {
+                let requestConfig = {
+                    url: "https://catfact.ninja/fact",
+                };
+                let requestPromise = axios(requestConfig);
+                requestPromise
+                    .then(function (response) {
+                        actualizarContenedor(JSON.stringify(response.data));
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    });
+            }
+
+            function actualizarContenedor(contenido) {
+                let element = document.getElementById("contenedor");
+                element.innerHTML = contenido;
+            }
+        </script>
+    </body>
+</html>

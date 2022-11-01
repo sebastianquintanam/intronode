@@ -1,0 +1,22 @@
+{
+  "name": "intronode",
+  "version": "0.1.0",
+  "description": "my description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anfejaramillo/intronodegp2.git"
+  },
+  "author": "anfejaramillo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anfejaramillo/intronodegp2/issues"
+  },
+  "homepage": "https://github.com/anfejaramillo/intronodegp2#readme",
+  "dependencies": {
+    "axios": "^1.1.3"
+  }
+}
